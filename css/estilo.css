@@ -1,0 +1,121 @@
+/* Variables generales */
+
+:root {
+    --principal_color: #8d57b5;
+    --principal_hover: #794c9c;
+    --secundario_color: #fe7826;
+    --secundario_dark: #aa4a0e;
+    --oscuro: #4b4c62;
+}
+
+/* En CSS, ::before crea un pseudoelemento que es el primer hijo del elemento seleccionado. Es usado normalmente para añadir contenido estético a un elemento, usando la propiedad content. Este elemento se muestra en línea con el texto de forma predeterminada.   https://developer.mozilla.org/es/docs/Web/CSS/::before*/
+
+/* agregamos este elemento con la pseudo clase ::before para agregar un "aire" de 60px al inicio del body y evitar que el heder tape imagenes del Hero Content */
+
+body::before {
+    display: block;
+    content: "";
+    height: 60px;
+}
+
+/* Utilitatios */
+
+.bg-principal {
+    background-color: var(--principal_color);
+}
+
+.bg-secundario {
+    background-color: var(--secundario_color);
+}
+
+.btn-principal {
+    background: var(--principal_color);
+    color: white;
+}
+
+.btn-principal:hover {
+    background: var(--principal_hover);
+    color: white;
+}
+
+.bg-oscuro {
+    background: var(--oscuro);
+}
+
+.text-principal {
+    color: var(--principal_color);
+}
+
+.text-secundario {
+    color: var(--secundario_color);
+}
+
+/* Animaciones con AnimateCSS y personales*/
+
+.animacionHero1 {
+    animation: slideInLeft;
+    animation-duration: 0.8s;
+}
+
+.animacionHero2 {
+    animation: slideInRight;
+    animation-duration: 0.8s;
+}
+
+.carta:hover {
+    animation: pulse;
+    animation-duration: 0.4s;
+}
+
+/* Servicios -  Precios */
+
+.card-linea {
+    outline: 1px solid white;
+    border-radius: 4px;
+    color: white;
+}
+
+.card1:hover {
+    background: var(--secundario_color);
+    border: 1px solid var(--secundario_color) !important;
+}
+
+/* .card1:hover .list-group-item{
+    background:#00ffb6 !important
+} */
+
+.card2:hover {
+    background: var(--principal_hover);
+    border: 1px solid var(--principal_hover);
+}
+
+/* .card2:hover .list-group-item{
+    background:#00C9FF !important
+} */
+
+.card3:hover {
+    background: #ff95e9;
+    border: 1px solid #ff95e9;
+}
+
+/* .card3:hover .list-group-item{
+    background:#ff95e9 !important
+} */
+
+/* .card:hover .btn-outline-dark{
+    color:white;
+    background:#212529;
+ } */
+
+@media (min-width: 768px) {
+    .news-input {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .animacionHero1 {
+        animation: bounce;
+        animation-duration: 0.8s;
+    }
+}
